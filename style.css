@@ -1,0 +1,149 @@
+.main div {
+    margin: 10px;
+    height: 40px;
+    width: 70px;
+    display: inline;
+    transition: 0.5s ease;
+}
+
+* {
+    font-family: 'Diplomata SC', cursive;
+    font-family: 'Graduate', cursive;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Sue Ellen Francisco', cursive;
+}
+
+.span {
+    color: red;
+}
+
+.sio {
+    background-color: rgb(51, 100, 190);
+}
+
+.h {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+
+
+}
+
+body {
+    background-color: rgb(79, 72, 72);
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 70%;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+h1 {
+    margin: auto;
+}
+
+.finish {
+    pointer-events: none;
+}
+
+.op {
+    opacity: 0.5;
+    border: 1px black solid;
+    pointer-events: none;
+}
+
+.score {
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.unknow {
+    border-radius: 30px;
+    position: absolute;
+    background-color: rgb(51, 178, 213);
+    z-index: 9999;
+    height: 200px;
+    width: 200px;
+    margin: 40px 120px;
+    cursor: pointer;
+
+
+
+
+}
+
+h1 {
+    background-color: white;
+}
+
+.unknow div {
+    transition: 1s ease;
+}
+
+.tocheacklevel {
+    font-size: 30px;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+.tocheacklevel div {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+.score div {
+    margin: 0 30px;
+    width: 50px;
+    width: 70px;
+    background-color: white;
+}
+
+
+
+#one,
+#tow {
+
+    height: 30px;
+    width: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+p {
+    font-size: 30px;
+}
+
+h3 {
+    margin: auto 50px;
+    font-size: 30px;
+    color: crimson;
+
+}
+
+.everything {
+    display: none;
+}
+
+@media screen and (max-width:500px) {
+    .main div {
+        height: 30px;
+        width: 30px;
+    }
+
+    body {
+        background-color: rgb(114, 117, 123);
+    }
+}
