@@ -7,38 +7,35 @@ let corrextspan = document.querySelector("#one");
 let wrongspan = document.querySelector("#tow");
 let truepresscount = 0;
 var count = 0;
-let sumofv = 0;
+let pp = 0;
 let isclicked = false;
 let everything = document.querySelector(".everything");
-let easy = document.querySelector(".easy");
-let medum = document.querySelector(".medum");
-let hard = document.querySelector(".hard");
-let unknow = document.querySelectorAll(".unknow div");
+let easy = document.querySelector("#ch1");
+let medum = document.querySelector("#ch2");
+let hard = document.querySelector("#ch3");
+let unknow = document.querySelectorAll(".unknow button");
 let t = 0;
-unknow.forEach((d) => {
-  d.onclick = () => {
-    isclicked = true;
+let tt = document.querySelector(".unknow");
+let sumofv = 0;
+let labels = document.querySelectorAll("input");
+
+let colors = ["green", "purple", "black", "yellow", "blue", "brown"];
+let finalv = colors[Math.floor(Math.random() * colors.length)];
+unknow.forEach((dd) => {
+  dd.onclick = () => {
     everything.style.display = "block";
-    d.parentElement.style.display = "none";
-    if (d.classList.contains("easy")) {
-      console.log("yes");
-      isclicked = true;
+    tt.style.display = "none";
+
+    if (dd.classList.contains("easy")) {
       t = 5000;
-    } else if (d.classList.contains("medum")) {
-      t = 4000;
-      isclicked = true;
-    } else if (d.classList.contains("hard")) {
-      t = 1500;
-      isclicked = true;
+    } else if (dd.classList.contains("medum")) {
+      t = 3500;
+    } else if (dd.classList.contains("hard")) {
+      t = 2000;
     }
 
-    console.log(t);
-    let colors = ["green", "purple", "black", "yellow", "blue", "brown"];
-    let finalv = colors[Math.floor(Math.random() * colors.length)];
     div.forEach((d) => {
-      setTimeout(() => {
-        d.style.backgroundColor = "rgba(56, 206, 22, 0.794)";
-      }, t);
+      console.log(t);
       let c = `${colors[Math.floor(Math.random() * colors.length)]}`;
       d.style.backgroundColor = c;
 
@@ -48,17 +45,28 @@ unknow.forEach((d) => {
       }
 
       setTimeout(() => {
+        d.classList.add("newclass");
+        //  d.style.backgroundColor = "rgba(56, 206, 22, 0.794)";
+      }, t);
+
+      setTimeout(() => {
         d.onclick = () => {
           d.classList.add("finish");
           d.style.backgroundColor = c;
+          d.classList.remove("newclass");
           if (d.style.backgroundColor != finalv) {
             wrongattemp++;
             wrongspan.innerHTML = wrongattemp;
             d.classList.add("op");
           } else {
             truepresscount++;
+
             corrextspan.innerHTML = truepresscount;
           }
+          if (sumofv == 0) {
+            location.reload();
+          }
+          console.log("real " + sumofv);
           console.log(truepresscount);
           if (truepresscount == sumofv) {
             Swal.fire("you win");
@@ -67,7 +75,10 @@ unknow.forEach((d) => {
             }, 3000);
           }
           if (wrongattemp > 6) {
-            Swal.fire("you lose");
+            div.forEach((d) => {
+              d.classList.remove("newclass");
+              d.classList.add("finish");
+            });
 
             setTimeout(() => {
               location.reload();
@@ -77,14 +88,9 @@ unknow.forEach((d) => {
       }, t);
 
       let sum = 0;
-      console.log(" sum of the color : " + sumofv);
 
       spasn.innerHTML = finalv;
       spasn.style.color = `${finalv}`;
-      if (finalv == "black") {
-        spasn.style.backgroundColor = "white";
-      }
-    }, 2000);
+    }, t);
   };
 });
-
