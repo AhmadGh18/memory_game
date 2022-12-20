@@ -27,11 +27,11 @@ unknow.forEach((dd) => {
     tt.style.display = "none";
 
     if (dd.classList.contains("easy")) {
-      t = 5000;
+      t = 4000;
     } else if (dd.classList.contains("medum")) {
-      t = 3500;
+      t = 3000;
     } else if (dd.classList.contains("hard")) {
-      t = 2000;
+      t = 1500;
     }
 
     div.forEach((d) => {
